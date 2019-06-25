@@ -2,12 +2,9 @@ package com.example.logs_challenge.thread;
 
 import com.example.logs_challenge.model.Event;
 import com.example.logs_challenge.service.EventService;
-import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +15,6 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 @Component
@@ -39,7 +35,7 @@ public class Runner implements CommandLineRunner {
             Event eventFound = new Event();
 
             /*Jackson Streaming*/
-            JsonParser parser = objectMapper.getFactory().createParser(new File("log.json"));
+            JsonParser parser = objectMapper.getFactory().createParser(new File(args[0]));
             if(parser.nextToken() != JsonToken.START_ARRAY) {
                 throw new IllegalStateException("Expected an array");
             }

@@ -13,7 +13,7 @@ import java.util.concurrent.Executor;
 public class LogsChallengeApplication {
 
     public static void main(String[] args) {
-        System.out.println(args);
+        System.out.println(args[0]);
         SpringApplication.run(LogsChallengeApplication.class, args);
 
     }
