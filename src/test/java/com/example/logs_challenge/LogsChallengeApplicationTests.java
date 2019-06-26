@@ -41,7 +41,7 @@ public class LogsChallengeApplicationTests {
     @Test
     public void whenSaveEvent_thenReturnTrue() {
         eventRepository.save(new Event("scsmbstgrc"));
-        Event event = eventRepository.findById(1L).orElseGet(() -> new Event("scsmbstgrc"));
+        Event event = eventRepository.findElement("scsmbstgrc");
         Assert.assertEquals("scsmbstgrc", event.getId());
     }
 
