@@ -33,9 +33,15 @@ public class Runner implements CommandLineRunner {
             Long eventDuration;
             List<Event> list = new ArrayList<>();
             Event eventFound = new Event();
+            JsonParser parser;
 
-            /*Jackson Streaming*/
-            JsonParser parser = objectMapper.getFactory().createParser(new File(args[0]));
+            /*Jackson Streaming
+            * Use log.json static file to Unit test*/
+            if(args.length > 0){
+                parser = objectMapper.getFactory().createParser(new File(args[0]));
+            }else{
+                parser = objectMapper.getFactory().createParser(new File("log.json"));
+            }
             if(parser.nextToken() != JsonToken.START_ARRAY) {
                 throw new IllegalStateException("Expected an array");
             }

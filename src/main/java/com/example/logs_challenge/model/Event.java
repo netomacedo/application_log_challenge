@@ -1,7 +1,4 @@
 package com.example.logs_challenge.model;
-
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
 @Entity
