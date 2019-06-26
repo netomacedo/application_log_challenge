@@ -4,10 +4,10 @@ Simple application to process log files and persist in H2 DB.
 
 #BUILD AND GENERATE JAR FILE:  gradlew build
 
-#YOU CAN GET THE JAR file in /build/libs/project_name.jar
+#YOU CAN GET THE JAR FILE IN /build/libs/project_name.jar
 
 #TO RUN UNIT TESTS USE: gradlew test --tests com.example.logs_challenge.LogsChallengeApplicationTests
 
-#RUN APPLICATION USING your .json file by parameter: java -jar logs_challenge-0.0.1-SNAPSHOT.jar log.json
+#RUN APPLICATION USING YOUR PATH WHERE YOUR .JSON FILE IS: java -jar logs_challenge-0.0.1-SNAPSHOT.jar path/log.json
 
 #CHECK THE RESULT IN DATABASE ACCESSING THE URL: http://localhost:8080/h2-console user: sa password: password
