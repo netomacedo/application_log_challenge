@@ -13,14 +13,14 @@ import java.util.concurrent.Executor;
 public class LogsChallengeApplication {
 
     public static void main(String[] args) {
-        System.out.println(args[0]);
+//        System.out.println(args[0]);
         SpringApplication.run(LogsChallengeApplication.class, args);
 
     }
 
     /*maximum of 5 threads should run concurrently and
     the queue size is set to 1000*/
-    @Bean
+    @Bean(name = "asyncExecutor")
     public Executor asyncExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setCorePoolSize(5);
