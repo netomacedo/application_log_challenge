@@ -1,4 +1,4 @@
-Simple application to process log files and persist in H2 DB.
+Simple application to process log files Async and persist in H2 DB.
 
 [Java 8]: I used Java8 to develop the backend. You will only need to run those command (from CMD) to start the application.
 
